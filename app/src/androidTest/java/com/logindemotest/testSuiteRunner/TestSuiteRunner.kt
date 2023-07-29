@@ -1,7 +1,7 @@
-package com.sourcey.materiallogindemo.testSuiteRunner
+package com.logindemotest.testSuiteRunner
 
-import com.sourcey.materiallogindemo.uitests.InvalidLoginTests
-import com.sourcey.materiallogindemo.uitests.ValidLoginTests
+import com.logindemotest.uitests.InvalidLoginTests
+import com.logindemotest.uitests.ValidLoginTests
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 

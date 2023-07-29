@@ -1,9 +1,9 @@
-package com.sourcey.materiallogindemo.pageObjects
+package com.logindemotest.pageObjects
 
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.matcher.ViewMatchers.withId
+import com.logindemotest.testUtils.Utilities
 import com.sourcey.materiallogindemo.R
-import com.sourcey.materiallogindemo.testUtils.Utilities
 
 class LoginPage : Utilities() {
 

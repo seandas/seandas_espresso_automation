@@ -1,4 +1,4 @@
-package com.sourcey.materiallogindemo.testUtils
+package com.logindemotest.testUtils
 
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.NoMatchingViewException

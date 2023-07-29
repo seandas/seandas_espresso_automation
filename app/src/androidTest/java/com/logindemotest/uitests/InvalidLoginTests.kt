@@ -1,4 +1,4 @@
-package com.sourcey.materiallogindemo.uitests
+package com.logindemotest.uitests
 
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.assertion.ViewAssertions.matches
@@ -6,9 +6,9 @@ import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
 import android.support.test.espresso.matcher.ViewMatchers.withText
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import com.logindemotest.pageObjects.LoginPage
+import com.logindemotest.testUtils.Utilities
 import com.sourcey.materiallogindemo.MainActivity
-import com.sourcey.materiallogindemo.pageObjects.LoginPage
-import com.sourcey.materiallogindemo.testUtils.Utilities
 import junit.framework.Assert.assertFalse
 import org.junit.Rule
 import org.junit.Test
