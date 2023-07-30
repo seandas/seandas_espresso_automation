@@ -15,13 +15,11 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class ValidLoginTests : Utilities() {
-
     @Rule
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
-    val loginPage = LoginPage()
-
+    private val loginPage = LoginPage()
     @Test
     fun testLoginWithValidCredentials() {
         loginPage.enterEmail("test@test.com")
@@ -29,8 +27,5 @@ class ValidLoginTests : Utilities() {
             .clickLoginButton()
 
         assertTrue("Valid login failed!", isElementVisible(onView(withText("Hello world!"))))
-
     }
-
-
 }

@@ -14,20 +14,17 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-
 @RunWith(AndroidJUnit4::class)
 class InvalidLoginTests : Utilities() {
 
     @Rule
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
-
-    val loginPage = LoginPage()
+    private val loginPage = LoginPage()
 
 
     @Test
-    fun testLoginWithInvalidCredentials() {
-
+    fun testLoginWithInvalidEmail() {
         loginPage.enterEmail("test@testcom")
             .enterPassword("a12@sa#")
             .clickLoginButton()
@@ -37,10 +34,23 @@ class InvalidLoginTests : Utilities() {
         // validate login failed toast msg is displayed
         onView(withText("Login failed")).inRoot(isToast()).check(matches(isDisplayed()))
 
+        // validate user failed to proceed to next screen
+        assertFalse("Invalid login succeeded!", isElementVisible(onView(withText("Hello world!"))))
+    }
+
+
+    @Test
+    fun testLoginWithInvalidPassword() {
+        loginPage.enterEmail("test@test.com")
+            .enterPassword("a12@sa#adfafdafd")
+            .clickLoginButton()
+
+        // wait 1 sec for toast msg to appear(may not need)
+        Thread.sleep(1000)
+        // validate login failed toast msg is displayed
+        onView(withText("Login failed")).inRoot(isToast()).check(matches(isDisplayed()))
 
         // validate user failed to proceed to next screen
         assertFalse("Invalid login succeeded!", isElementVisible(onView(withText("Hello world!"))))
-
     }
-
 }
